@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hacker Prank</title>
+<style>
+body {
+  background: #000;
+  color: #00ff41;
+  font-family: monospace;
+  text-align: center;
+  padding: 20px;
+}
+h1 { text-shadow: 0 0 12px #00ff41; }
+#screen {
+  border: 1px solid #00ff41;
+  padding: 18px;
+  min-height: 180px;
+  text-align: left;
+  line-height: 1.8;
+}
+button {
+  background: #00ff41;
+  color: #000;
+  border: 0;
+  padding: 14px 20px;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 16px;
+}
+#result { font-size: 24px; margin-top: 22px; }
+</style>
+</head>
+<body>
+<h1>⚠ HACKER TERMINAL ⚠</h1>
+<p>Simulation only — just for fun!</p>
+<div id="screen">Ready to start...</div>
+<button onclick="startHack()">START SIMULATION</button>
+<div id="result"></div>
+<script>
+function startHack() {
+  const screen = document.getElementById('screen');
+  const result = document.getElementById('result');
+  const lines = [
+    '> Initializing simulation...',
+    '> Scanning imaginary system...',
+    '> Loading cyber effects...',
+    '> Checking demo security...',
+    '> Simulation complete!'
+  ];
+  let i = 0;
+  result.textContent = '';
+  screen.textContent = '';
+  const timer = setInterval(() => {
+    if (i < lines.length) {
+      screen.innerHTML += lines[i++] + '<br>';
+    } else {
+      clearInterval(timer);
+      result.textContent = '😂 JUST A PRANK!';
+    }
+  }, 800);
+}
+</script>
+</body>
+</html>
+
